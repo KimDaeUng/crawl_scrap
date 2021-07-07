@@ -1,13 +1,14 @@
 from selenium import webdriver
-browser = webdriver.Chrome()
+options = webdriver.ChromeOptions()
+options.headless = True
+options.add_argument('window-size=1920x1050')
+
+browser = webdriver.Chrome(options=options)
 browser.maximize_window()
+
+# 페이지 이동
 url = "https://play.google.com/store/movies/top"
 browser.get(url)
-
-# 지정한 위치로 스크롤 내리기
-# 해상도 세로 높이 위치로 스크롤 내리기
-# browser.execute_script("window.scrollTo(0, 1050)")
-# browser.execute_script("window.scrollTo(0, 2100)")
 
 # 화면 가장 아래로 스크롤 내리기
 browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
@@ -34,6 +35,7 @@ while True:
     prev_height = curr_height
 
 print("스크롤 완료")
+browser.get_screenshot_as_file('google_movie.png')
 
 import requests
 from bs4 import BeautifulSoup
