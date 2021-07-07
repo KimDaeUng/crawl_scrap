@@ -33,6 +33,6 @@ Temporary Items
 # End of https://www.toptal.com/developers/gitignore/api/macos
 
 # ETC
-python3.8.exec
-chromedriver.exec
+python3.8
+chromedriver
 chromedriver_mac64_m1.zip
