@@ -35,4 +35,5 @@ Temporary Items
 # ETC
 python3.8
 chromedriver
+chromedriver.exec
 chromedriver_mac64_m1.zip
